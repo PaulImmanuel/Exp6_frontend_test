@@ -13,7 +13,7 @@ const [status,setStatus] = useState() //status of form submission
 
 const handleSubmit = (e) => {
 e.preventDefault()
-axios.post('http://localhost:8000/register',{name,email,password,consumer_number,address})
+axios.post('https://exp6-backend-test.onrender.com/register',{name,email,password,consumer_number,address})
 .then(result=>setStatus(result.data))
 .catch(err=>setStatus(err))
 }

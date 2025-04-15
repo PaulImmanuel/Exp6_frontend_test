@@ -13,7 +13,7 @@ function EditProduct(props) {
     
     const findProduct = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/findProduct/${id}`);
+            const response = await axios.get(`https://exp6-backend-test.onrender.com/findProduct/${id}`);
             setName(response.data.name);
             setQuantity(response.data.quantity);
             setPrice(response.data.price);
@@ -29,7 +29,7 @@ function EditProduct(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:8000/editProduct/${id}`, { name, quantity, price });
+            const response = await axios.put(`https://exp6-backend-test.onrender.com/editProduct/${id}`, { name, quantity, price });
             toast.success(response.data.message);
         } catch (error) {
             console.log(error);

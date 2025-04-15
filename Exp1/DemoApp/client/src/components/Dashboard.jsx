@@ -9,7 +9,7 @@ function Dashboard() {
 
     const viewProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/viewProducts');
+            const response = await axios.get('https://exp6-backend-test.onrender.com/viewProducts');
             setProducts(response.data);
         } catch (error) {
             console.log(error);
@@ -25,7 +25,7 @@ function Dashboard() {
         
         if (isConfirmed) {
             try {
-                const response = await axios.delete(`http://localhost:8000/deleteProduct/${id}`);
+                const response = await axios.delete(`https://exp6-backend-test.onrender.com/deleteProduct/${id}`);
                 toast.success(response.data.message);
                 viewProducts(); //refresh after delete
             } catch (error) {

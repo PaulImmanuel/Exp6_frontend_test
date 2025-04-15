@@ -11,7 +11,7 @@ function AddProducts(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/addProduct', { name, quantity, price });
+            const response = await axios.post('https://exp6-backend-test.onrender.com/addProduct', { name, quantity, price });
             toast.success(response.data.message);
         } 
         catch (error) {
